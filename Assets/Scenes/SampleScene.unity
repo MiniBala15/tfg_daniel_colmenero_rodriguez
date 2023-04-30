@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 464092906}
   - component: {fileID: 464092911}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,9 +351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1b07b4ba9b6bb469b2edaba7f51df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 10
-  sprintSpeed: 15
-  jumpForce: 2
+  walkSpeed: 3
+  sprintSpeed: 5
+  jumpForce: 4
   sensibility: 4
 --- !u!136 &464092907
 CapsuleCollider:
