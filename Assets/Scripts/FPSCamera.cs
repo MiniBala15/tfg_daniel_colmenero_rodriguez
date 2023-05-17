@@ -45,8 +45,8 @@ public class FPSCamera : MonoBehaviour
 
         crouched = Input.GetKey(KeyCode.C);
 
-        if(Input.GetButtonDown("Jump") && !crouched)  {
-            rb.AddForce(0, jumpForce, 0);
+        if(Input.GetKeyDown(KeyCode.Space) && !crouched)  {
+            rb.AddForce(0, jumpForce * 100, 0);
         }
     }
 

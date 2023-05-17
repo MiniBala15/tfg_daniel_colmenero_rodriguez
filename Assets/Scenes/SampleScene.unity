@@ -353,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 3
   sprintSpeed: 5
-  jumpForce: 4
+  jumpForce: 20
   sensibility: 4
 --- !u!136 &464092907
 CapsuleCollider:
