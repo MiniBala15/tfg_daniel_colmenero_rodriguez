@@ -47,25 +47,25 @@ public class Lantern : MonoBehaviour
         }
 
         if(remainingBattery > 0 && remainingBattery <= 25) {
-            lanternLight.intensity = 1f;
+            lanternLight.intensity = 0.2f;
             battery1.sprite = loadedBattery;
             battery2.sprite = emptyBattery;
         }
 
         if(remainingBattery > 25 && remainingBattery <= 50) {
-            lanternLight.intensity = 1.5f;
+            lanternLight.intensity = 0.5f;
             battery2.sprite = loadedBattery;
             battery3.sprite = emptyBattery;
         } 
 
         if(remainingBattery > 50 && remainingBattery <= 75) {
-            lanternLight.intensity = 2f;
+            lanternLight.intensity = 0.8f;
             battery3.sprite =  loadedBattery;
             battery4.sprite = emptyBattery;
         }
         
         if(remainingBattery > 75 && remainingBattery <= 100) {
-            lanternLight.intensity = 2.5f;
+            lanternLight.intensity = 1f;
             battery4.sprite = loadedBattery;
         } 
     }
