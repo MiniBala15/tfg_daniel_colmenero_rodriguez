@@ -10,6 +10,7 @@ public class FPSCamera : MonoBehaviour
     public float walkSpeed = 10f;
     public float sprintSpeed = 15f;
     public float jumpForce = 2;
+    public int pickedPapers;
 
     public float sensibility = 4;
     Transform camera;
@@ -23,6 +24,7 @@ public class FPSCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int pickedPapers = 0;
         Cursor.lockState = CursorLockMode.Locked;
 
         rb = GetComponent<Rigidbody>();
