@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class FPSCamera : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class FPSCamera : MonoBehaviour
     public float sprintSpeed = 15f;
     public float jumpForce = 2;
     public int pickedPapers;
+    int totalPapers = 8;
+    public Text paperAmountMessage;
 
     public float sensibility = 4;
     Transform camera;
@@ -25,6 +29,7 @@ public class FPSCamera : MonoBehaviour
     void Start()
     {
         int pickedPapers = 0;
+
         Cursor.lockState = CursorLockMode.Locked;
 
         rb = GetComponent<Rigidbody>();
@@ -39,6 +44,9 @@ public class FPSCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        paperAmountMessage.text = pickedPapers + "/" + totalPapers;
+        paperAmountMessage.enabled = true;
+
         movementInput.x = Input.GetAxis("Horizontal");
         movementInput.y = Input.GetAxis("Vertical");
 

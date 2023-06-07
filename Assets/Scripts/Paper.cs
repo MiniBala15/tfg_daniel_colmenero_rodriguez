@@ -7,8 +7,8 @@ using TMPro;
 public class Paper : MonoBehaviour
 {
     bool isInsideCollider = false;
+    public Light helpLight;
     public int pickedPages;
-    int totalPages = 8;
     public Text paperMessage;
     public float displayTime = 2f;
     private bool isDisplayingText = false;
@@ -22,12 +22,13 @@ public class Paper : MonoBehaviour
 
     void Update()
     {
-        if(isInsideCollider && Input.GetKeyDown(KeyCode.E)) {
+        if(isInsideCollider && Input.GetKeyDown(KeyCode.E) && character.pickedPapers < 8) {
             character.pickedPapers += 1;     
             paperMessage.text = "Has recogido una nota ";       
             displayTimer = Time.time + displayTime;
             paperMessage.enabled = true;
             isDisplayingText = true;
+            helpLight.enabled = false;
             gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
 
@@ -37,10 +38,6 @@ public class Paper : MonoBehaviour
             paperMessage.text = "";
 
         }
-
-        // if(totalPages >= 8) {
-        //     win();
-        // }
     }
 
     private void OnTriggerEnter(Collider other) {
