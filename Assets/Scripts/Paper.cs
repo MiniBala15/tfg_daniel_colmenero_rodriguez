@@ -8,7 +8,6 @@ public class Paper : MonoBehaviour
 {
     bool isInsideCollider = false;
     public Light helpLight;
-    public int pickedPages;
     public Text paperMessage;
     public float displayTime = 2f;
     private bool isDisplayingText = false;
