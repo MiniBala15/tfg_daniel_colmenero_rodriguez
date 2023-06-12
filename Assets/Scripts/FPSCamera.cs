@@ -16,6 +16,12 @@ public class FPSCamera : MonoBehaviour
     int totalPapers = 8;
     public Text paperAmountMessage;
 
+    public Text escapeMessage;
+    public float displayTime = 2f;
+    private bool isDisplayingText = false;
+    private float displayTimer = 0f;
+    public GameObject endDoor;
+
     public float sensibility = 4;
     Transform camera;
     float rotationX;
@@ -57,6 +63,20 @@ public class FPSCamera : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && !crouched)  {
             rb.AddForce(0, jumpForce * 100, 0);
+        }
+
+        if (pickedPapers == 8) {
+            endDoor.SetActive(true);
+            escapeMessage.text = "Has conseguido todas las notas. ¡HUYE!";       
+            displayTimer = Time.time + displayTime;
+            escapeMessage.enabled = true;
+            isDisplayingText = true;
+        }
+
+        if (isDisplayingText && Time.time >= displayTimer) {
+            isDisplayingText = false;
+            escapeMessage.enabled = false;
+            escapeMessage.text = "";
         }
     }
 

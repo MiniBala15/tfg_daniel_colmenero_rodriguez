@@ -12,10 +12,11 @@ public class DeadScreamer : MonoBehaviour
         if (other.tag == "Player") {
             Instantiate(jumpScare[Random.Range(0, jumpScare.Length)]);
             Invoke("changeScene", delayInSeconds);
+            Cursor.lockState = CursorLockMode.None;
         }    
     }
 
     public void changeScene() {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 }
