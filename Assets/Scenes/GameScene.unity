@@ -875,7 +875,7 @@ MonoBehaviour:
   isActive: 0
   handLantern: 0
   remainingBattery: 100
-  batteryLoss: 0.5
+  batteryLoss: 2
   battery1: {fileID: 328435735}
   battery2: {fileID: 22253071}
   battery3: {fileID: 1339222812}
@@ -2544,8 +2544,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.65676445, y: 0.4649838, z: 0.026184937}
-  m_Center: {x: 0.007900119, y: 0.08314959, z: 0.01729499}
+  m_Size: {x: 0.065879785, y: 0.109766416, z: 0.026185002}
+  m_Center: {x: 0.00013663372, y: -0.0054882914, z: 0.017294943}
 --- !u!114 &817891430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3757,8 +3757,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9836963, y: 1, z: 8.678414}
-  m_Center: {x: 0.12992983, y: 0, z: 3.8392062}
+  m_Size: {x: 1.9836963, y: 1, z: 1.5092344}
+  m_Center: {x: 0.12992987, y: 0, z: 0.2546153}
 --- !u!23 &1105997229
 MeshRenderer:
   m_ObjectHideFlags: 0

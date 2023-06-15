@@ -21,6 +21,7 @@ public class Paper : MonoBehaviour
 
     void Update()
     {
+        //The player takes the paper if isInsideCollider property is true, and 'E' key is pressed.
         if(isInsideCollider && Input.GetKeyDown(KeyCode.E) && character.pickedPapers < 8) {
             character.pickedPapers += 1;     
             paperMessage.text = "Has recogido una nota ";       
@@ -31,20 +32,23 @@ public class Paper : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
 
+        //After a short time, the message disappear
         if (isDisplayingText && Time.time >= displayTimer) {
             isDisplayingText = false;
             paperMessage.enabled = false;
             paperMessage.text = "";
-
+            Destroy(gameObject);
         }
     }
 
+    //Method that sets isInsideCollider to true when the player is inside the paper's collider
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Player") {
             isInsideCollider = true;
         }
     }
 
+    //Method that sets isInsideCollider to false when the player is not inside the paper's collider
     private void OnTriggerExit(Collider other) {
         if(other.gameObject.tag == "Player") {
             isInsideCollider = false;

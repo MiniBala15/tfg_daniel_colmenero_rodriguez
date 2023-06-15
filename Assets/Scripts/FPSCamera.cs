@@ -83,18 +83,19 @@ public class FPSCamera : MonoBehaviour
     private void FixedUpdate() {
         float speed = (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Fire2")) ? sprintSpeed : walkSpeed;
         rb.velocity = 
-            transform.forward * speed * movementInput.y     //movimiento hacia adelante y atras;
-            + transform.right * speed * movementInput.x     //movimiento hacia los lados;
+            transform.forward * speed * movementInput.y     //Y movement;
+            + transform.right * speed * movementInput.x     //X movement;
             + new Vector3 (0, rb.velocity.y, 0);
 
-        transform.rotation *= Quaternion.Euler(0, rotationInput.x, 0);  //rotacion horizontal
+        //horizontal rotation
+        transform.rotation *= Quaternion.Euler(0, rotationInput.x, 0);  
 
-        //camara vertical
+        //vertical camera
         rotationX -= rotationInput.y;
         rotationX = Mathf.Clamp(rotationX, -60, 60);
         camera.localRotation = Quaternion.Euler(rotationX, 0, 0);
 
-        //agacharse o levantarse
+        //crouch
         transform.localScale = Vector3.Lerp(
             transform.localScale,
             crouched ? crouchedScale : normalScale,

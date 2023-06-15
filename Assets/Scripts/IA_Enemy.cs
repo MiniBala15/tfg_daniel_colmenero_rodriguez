@@ -9,6 +9,7 @@ public class IA_Enemy : MonoBehaviour
     public float speed;
     public NavMeshAgent IA;
 
+    //Sets the enemy speed and target
     void Update()
     {
         IA.speed = speed;
